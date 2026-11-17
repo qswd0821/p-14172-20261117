@@ -27,6 +27,10 @@ public class PostService {
         return postRepository.findById(id);
     }
 
+    public Optional<Post> findLatest() {
+        return postRepository.findFirstByOrderByIdDesc();
+    }
+
     public List<Post> findAll() {
         return postRepository.findAll();
     }
