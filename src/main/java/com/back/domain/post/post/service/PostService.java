@@ -51,4 +51,12 @@ public class PostService {
     public void flush() {
         postRepository.flush();
     }
+
+    public boolean deleteComment(Post post, PostComment postComment) {
+        return post.deleteComment(postComment);
+    }
+
+    public void modifyComment(PostComment postComment, String content) {
+        postComment.modify(content);
+    }
 }
